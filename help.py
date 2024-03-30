@@ -4,7 +4,7 @@ def add_users():
     f = open("die/users", "r")
     lst = [i[:-1] for i in f.readlines()]
     n = int(lst[0])
-    print(f"echo \"root:{lst[2]}\" | chpasswd")
+    print(f"echo \"{lst[2]}{lst[2]}\" | passwd root")
 
     cnt = 4
     for i in range(n - 1):
@@ -18,7 +18,7 @@ def add_users():
             group = lst[cnt]
             os.system(f"usermod -aG {group} {name}")
             cnt += 1
-        os.system(f"echo \"{name}:{psswd}\" | chpasswd")
+        os.system(f"echo \"{psswd}\n{psswd}\" | passwd {name}")
 
 add_users()
 
