@@ -4,7 +4,7 @@ def add_users():
     f = open("die/users", "r")
     lst = [i[:-1] for i in f.readlines()]
     n = int(lst[0])
-    print(f"echo \"{lst[2]}{lst[2]}\" | passwd root")
+    print(f"echo \"{lst[2]}\n{lst[2]}\" | passwd root")
 
     cnt = 4
     for i in range(n - 1):
