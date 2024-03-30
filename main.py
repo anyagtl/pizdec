@@ -23,7 +23,7 @@ def edit_users():
         cmd = input("\nEditing users\nFor all commands type \"help\"\nEnter the command: ")
 
         if (cmd == "help"):
-            print("Commands: list, add_user, rm_user, add_group, rm_group, done")
+            print("Commands: list, add_user, rm_user, add_user_to_groups, rm_user_from_groups, done")
 
         if (cmd =="list"):
             print(users, sep="\n")
@@ -34,7 +34,7 @@ def edit_users():
                 print("user already exists")
                 continue
 
-            psswd = input("passwoed? ")
+            psswd = input("password? ")
             if (len(psswd) == 0):
                 print("incorrect password")
                 continue
@@ -55,8 +55,8 @@ def edit_users():
             if (name in users):
                 users.pop(name)
 
-        if (cmd == "add_group"):
-            name = input("name? ")
+        if (cmd == "add_user_to_groups"):
+            name = input("user name? ")
             if (name == "root"):
                 print("Impossible to add root in groups")
                 continue
@@ -76,7 +76,7 @@ def edit_users():
                 if (i not in users[name]["groups"]):
                     users[name]["groups"].append(i)
 
-        if (cmd == "rm_group"):
+        if (cmd == "rm_user_from_groups"):
             name = input("name? ")
             groups = input("groups to remove? ").split()
 
