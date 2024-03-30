@@ -11,14 +11,15 @@ def get_disk():
 
 def edit_users():
     root_psswd = ''
-'''
+
+    '''
     cnf = ''
     while (root_psswd == '' or cnf != 'y'):
         root_psswd = input("Choose password for root: ")
         cnf = input("U shure? [y/n] ")
-'''
+    '''
 
-    cmd = ""
+    cmd = ''
     users = {"root" : {"password" : root_psswd}}
     while (cmd != "done"):
         cmd = input("\nEditing users\nFor all commands type \"help\"\nEnter the command: ")
