@@ -13,12 +13,12 @@ def add_users():
         groups = ""
         x = int(lst[cnt + 2])
         cnt += 3
-        print(f"useradd -m {name}")
+        os.system(f"useradd -m {name}")
         for j in range(x):
             group = lst[cnt]
-            print(f"usermod -aG {group} {name}")
+            os.system(f"usermod -aG {group} {name}")
             cnt += 1
-        print(f"echo \"{name}:{psswd}\" | chpasswd")
+        os.system(f"echo \"{name}:{psswd}\" | chpasswd")
 
 add_users()
 

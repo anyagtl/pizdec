@@ -19,7 +19,7 @@ def edit_users():
     cmd = ""
     users = {"root" : {"password" : root_psswd}}
     while (cmd != "done"):
-        cmd = input("\nEditing users\nFor all commands type \"help\"\nWrite comandi: ")
+        cmd = input("\nEditing users\nFor all commands type \"help\"\nEnter the command: ")
 
         if (cmd == "help"):
             print("Commands: list, add_user, rm_user, add_group, rm_group, done")
@@ -136,6 +136,6 @@ os.system("mount --make-rslave /mnt/dev ")
 os.system("mount --bind /run /mnt/run ")
 os.system("mount --make-slave /mnt/run ")
 os.system("chroot /mnt /bin/bash -c \"python3 /die/run.py\"")
-os.system("rm -rf /die")
+os.system("rm -rf /mnt/die")
 os.system("rm users")
 #os.system("reboot")
