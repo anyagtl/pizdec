@@ -11,10 +11,12 @@ def get_disk():
 
 def edit_users():
     root_psswd = ''
+'''
     cnf = ''
     while (root_psswd == '' or cnf != 'y'):
         root_psswd = input("Choose password for root: ")
         cnf = input("U shure? [y/n] ")
+'''
 
     cmd = ""
     users = {"root" : {"password" : root_psswd}}
